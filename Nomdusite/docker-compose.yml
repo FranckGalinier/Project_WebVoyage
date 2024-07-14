@@ -1,0 +1,77 @@
+version: "3.8"
+volumes:
+  mariavoyage: # déclaration du volume pour la base
+
+services:
+
+  # container de bdd
+  voyagebase: # nom de service
+    container_name: basevoyage # nom du container
+    image: mariadb:latest
+    ports:
+      - '3309:3306'
+    volumes:
+      - mariavoyage:/var/lib/mysql
+    command: --default-authentication-plugin=mysql_native_password
+    restart: always
+    environment:
+      TZ: UTC
+      MYSQL_ROOT_PASSWORD: voyageadmin
+      MYSQL_DATABASE: voyage
+      MYSQL_USER: voyageuser
+      MYSQL_PASSWORD: voyageuser
+
+  # container php
+  voyagephp:
+    container_name: phpvoyage
+    build:
+      context: .
+      dockerfile: ./php/Dockerfile
+    sysctls:
+      - net.ipv4.ip_unprivileged_port_start=0
+    ports:
+      - '9001:9000'
+    environment:
+      DEBUG: '1'
+      PHP_DISPLAY_ERRORS: '1'
+      PHP_POST_MAX_SIZE: "100M"
+      PHP_UPLOAD_MAX_FILESIZE: "100M"
+      TZ: UTC
+    volumes:
+      - ./app:/var/www/html
+    depends_on:
+      - voyagebase
+
+  # service node
+  voyagenode:
+    tty: true
+    container_name: nodevoyage
+    build:
+      context: .
+      dockerfile: ./node/Dockerfile
+    volumes:
+      - ./app:/var/www/html
+    depends_on:
+      - voyagephp
+    command: /bin/sh -c "yarn install && yarn encore dev && yarn encore dev --watch"
+
+  # server web
+  voyagenginx:
+    container_name: nginxvoyage
+    image: nginx:stable-alpine
+    sysctls:
+      - net.ipv4.ip_unprivileged_port_start=0
+    ports:
+      - '80:80'
+      - '443:443'
+    restart: always
+    environment:
+      TZ: UTC
+    volumes:
+      - ./app:/var/www/html
+      - ./nginx/default.conf:/etc/nginx/conf.d/default.conf
+      - ./log:/var/log/nginx/
+    depends_on:
+      - voyagephp
+      - voyagebase
+      - voyagenode
