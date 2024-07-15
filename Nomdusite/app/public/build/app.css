@@ -1,0 +1,57 @@
+/*!**************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[1].oneOf[1].use[1]!./assets/styles/app.css ***!
+  \**************************************************************************************************************/
+
+  body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f8f9fa;
+}
+
+.navbar {
+    background-color: #343a40;
+}
+
+.navbar-brand, .nav-link {
+    color: #ffffff !important;
+}
+
+.hero {
+    background-image: url('https://images.ctfassets.net/bth3mlrehms2/27MnAH4RS1zTSFygAmnq5i/b0f6ac5d834a52e29dd95b47a9c0ebce/Thailande__Phang_Nga_Nationalpark__Montagne.jpg?w=1200&h=593&fl=progressive&q=50&fm=jpg');
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+    color: white;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.hero h1 {
+    font-size: 4rem;
+    font-family: 'Georgia', serif;
+}
+
+.hero p {
+    font-size: 1.5rem;
+    font-family: 'Verdana', sans-serif;
+}
+
+.btn-primary {
+    background-color: #a1c1e2;
+    border-color: #5ca2ee;
+}
+
+/* maps du monde */
+#map {
+  height: 600px;
+}
+.continent {
+  fill-opacity: 0.5;
+  stroke: #000;
+  stroke-width: 1;
+}
+.continent:hover {
+  fill-opacity: 0.7;
+  cursor: pointer;
+}
