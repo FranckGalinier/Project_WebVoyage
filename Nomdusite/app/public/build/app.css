@@ -1,57 +1,78 @@
 /*!**************************************************************************************************************!*\
   !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[1].oneOf[1].use[1]!./assets/styles/app.css ***!
   \**************************************************************************************************************/
-
-  body {
-    font-family: 'Arial', sans-serif;
-    background-color: #f8f9fa;
-}
-
-.navbar {
-    background-color: #343a40;
-}
-
-.navbar-brand, .nav-link {
-    color: #ffffff !important;
-}
+/* style de la div hero */
 
 .hero {
-    background-image: url('https://images.ctfassets.net/bth3mlrehms2/27MnAH4RS1zTSFygAmnq5i/b0f6ac5d834a52e29dd95b47a9c0ebce/Thailande__Phang_Nga_Nationalpark__Montagne.jpg?w=1200&h=593&fl=progressive&q=50&fm=jpg');
-    background-size: cover;
-    background-position: center;
-    height: 100vh;
-    color: white;
-    text-align: center;
+  padding: 1rem;
+
+  border-radius: 5px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  background-image: url(/build/images/bg-images.e2c590ad.jpg);
     display: flex;
     flex-direction: column;
     justify-content: center;
+    align-items: center;
+    height: 100vh; /* Ajustez cette valeur en fonction de vos besoins */
+    background-size: cover;
+    background-position: center;
+    color: white; /* Changez la couleur du texte en fonction de votre image de fond */
 }
 
 .hero h1 {
-    font-size: 4rem;
-    font-family: 'Georgia', serif;
+    font-size: 2.5em;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Ajoute un peu d'ombre au texte pour le rendre plus lisible */
 }
 
 .hero p {
-    font-size: 1.5rem;
-    font-family: 'Verdana', sans-serif;
+    font-size: 1.2em;
+    max-width: 600px; /* Limite la largeur du texte */
+    text-align: center;
 }
 
-.btn-primary {
-    background-color: #a1c1e2;
-    border-color: #5ca2ee;
+.hero .btn {
+background-color: #17aaff;
+    opacity:0.8; /* Couleur de fond du bouton */
+    color: white; /* Couleur du texte du bouton */
+    border: none;
+    border-radius: 50px; /* Arrondit les coins du bouton */
+    padding: 15px 30px; /* Ajuste l'espacement interne du bouton */
+    text-transform: uppercase; /* Transforme le texte en majuscules */
+    font-weight: bold; /* Rend le texte en gras */
+    transition: all 0.3s ease; /* Ajoute une transition douce à tous les changements de style */
+    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.1); /* Ajoute une ombre subtile */
 }
 
-/* maps du monde */
-#map {
-  height: 600px;
+.hero .btn:hover {
+    background-color: #ffa07a; /* Change la couleur de fond lorsque la souris survole le bouton */
+    box-shadow: 0px 15px 20px rgba(0, 0, 0, 0.3); /* Augmente l'ombre lorsque la souris survole le bouton */
 }
-.continent {
-  fill-opacity: 0.5;
-  stroke: #000;
-  stroke-width: 1;
+
+/* navbar */
+.navbar {
+    background-color: rgba(68, 109, 192, 0.7);
+     /* Couleur de fond semi-transparente */
 }
-.continent:hover {
-  fill-opacity: 0.7;
-  cursor: pointer;
+
+.navbar-brand {
+    color: white; /* Couleur du texte de la marque */
 }
+
+.navbar-toggler {
+    border-color: white; /* Couleur de la bordure du bouton de basculement */
+}
+
+.navbar-toggler-icon {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 width=%2730%27 height=%2730%27 viewBox=%270 0 30 30%27%3E%3Cpath stroke=%27rgba%28255, 255, 255%29%27 stroke-linecap=%27round%27 stroke-miterlimit=%2710%27 stroke-width=%272%27 d=%27M4 7h22M4 15h22M4 23h22%27/%3E%3C/svg%3E"); /* Couleur de l'icône du bouton de basculement */
+}
+
+.navbar-nav .nav-link {
+    color: white; /* Couleur du texte des liens de navigation */
+}
+
+.navbar-nav .nav-link:hover {
+    color: #ff6347; /* Couleur du texte des liens de navigation lorsqu'ils sont survolés */
+}
+
+
+/*# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiYXBwLmNzcyIsIm1hcHBpbmdzIjoiOzs7QUFBQSx5QkFBeUI7O0FBRXpCO0VBQ0UsYUFBYTs7RUFFYixrQkFBa0I7RUFDbEIsd0NBQXdDO0VBQ3hDLHlEQUFxRDtJQUNuRCxhQUFhO0lBQ2Isc0JBQXNCO0lBQ3RCLHVCQUF1QjtJQUN2QixtQkFBbUI7SUFDbkIsYUFBYSxFQUFFLG9EQUFvRDtJQUNuRSxzQkFBc0I7SUFDdEIsMkJBQTJCO0lBQzNCLFlBQVksRUFBRSxtRUFBbUU7QUFDckY7O0FBRUE7SUFDSSxnQkFBZ0I7SUFDaEIsMkNBQTJDLEVBQUUsK0RBQStEO0FBQ2hIOztBQUVBO0lBQ0ksZ0JBQWdCO0lBQ2hCLGdCQUFnQixFQUFFLCtCQUErQjtJQUNqRCxrQkFBa0I7QUFDdEI7O0FBRUE7QUFDQSx5QkFBeUI7SUFDckIsV0FBVyxFQUFFLDhCQUE4QjtJQUMzQyxZQUFZLEVBQUUsK0JBQStCO0lBQzdDLFlBQVk7SUFDWixtQkFBbUIsRUFBRSxpQ0FBaUM7SUFDdEQsa0JBQWtCLEVBQUUsMENBQTBDO0lBQzlELHlCQUF5QixFQUFFLHNDQUFzQztJQUNqRSxpQkFBaUIsRUFBRSwwQkFBMEI7SUFDN0MseUJBQXlCLEVBQUUsZ0VBQWdFO0lBQzNGLDRDQUE0QyxFQUFFLDZCQUE2QjtBQUMvRTs7QUFFQTtJQUNJLHlCQUF5QixFQUFFLGtFQUFrRTtJQUM3Riw0Q0FBNEMsRUFBRSx5REFBeUQ7QUFDM0c7O0FBRUEsV0FBVztBQUNYO0lBQ0kseUNBQXlDO0tBQ3hDLHNDQUFzQztBQUMzQzs7QUFFQTtJQUNJLFlBQVksRUFBRSxrQ0FBa0M7QUFDcEQ7O0FBRUE7SUFDSSxtQkFBbUIsRUFBRSxtREFBbUQ7QUFDNUU7O0FBRUE7SUFDSSx5REFBZ1IsRUFBRSxnREFBZ0Q7QUFDdFU7O0FBRUE7SUFDSSxZQUFZLEVBQUUsNkNBQTZDO0FBQy9EOztBQUVBO0lBQ0ksY0FBYyxFQUFFLHNFQUFzRTtBQUMxRiIsInNvdXJjZXMiOlsid2VicGFjazovLy8uL2Fzc2V0cy9zdHlsZXMvYXBwLmNzcyJdLCJzb3VyY2VzQ29udGVudCI6WyIvKiBzdHlsZSBkZSBsYSBkaXYgaGVybyAqL1xuXG4uaGVybyB7XG4gIHBhZGRpbmc6IDFyZW07XG5cbiAgYm9yZGVyLXJhZGl1czogNXB4O1xuICBib3gtc2hhZG93OiAwIDJweCA1cHggcmdiYSgwLCAwLCAwLCAwLjEpO1xuICBiYWNrZ3JvdW5kLWltYWdlOiB1cmwoXCIvcHVibGljL2ltYWdlcy9iZy1pbWFnZXMuanBnXCIpO1xuICAgIGRpc3BsYXk6IGZsZXg7XG4gICAgZmxleC1kaXJlY3Rpb246IGNvbHVtbjtcbiAgICBqdXN0aWZ5LWNvbnRlbnQ6IGNlbnRlcjtcbiAgICBhbGlnbi1pdGVtczogY2VudGVyO1xuICAgIGhlaWdodDogMTAwdmg7IC8qIEFqdXN0ZXogY2V0dGUgdmFsZXVyIGVuIGZvbmN0aW9uIGRlIHZvcyBiZXNvaW5zICovXG4gICAgYmFja2dyb3VuZC1zaXplOiBjb3ZlcjtcbiAgICBiYWNrZ3JvdW5kLXBvc2l0aW9uOiBjZW50ZXI7XG4gICAgY29sb3I6IHdoaXRlOyAvKiBDaGFuZ2V6IGxhIGNvdWxldXIgZHUgdGV4dGUgZW4gZm9uY3Rpb24gZGUgdm90cmUgaW1hZ2UgZGUgZm9uZCAqL1xufVxuXG4uaGVybyBoMSB7XG4gICAgZm9udC1zaXplOiAyLjVlbTtcbiAgICB0ZXh0LXNoYWRvdzogMnB4IDJweCA0cHggcmdiYSgwLCAwLCAwLCAwLjUpOyAvKiBBam91dGUgdW4gcGV1IGQnb21icmUgYXUgdGV4dGUgcG91ciBsZSByZW5kcmUgcGx1cyBsaXNpYmxlICovXG59XG5cbi5oZXJvIHAge1xuICAgIGZvbnQtc2l6ZTogMS4yZW07XG4gICAgbWF4LXdpZHRoOiA2MDBweDsgLyogTGltaXRlIGxhIGxhcmdldXIgZHUgdGV4dGUgKi9cbiAgICB0ZXh0LWFsaWduOiBjZW50ZXI7XG59XG5cbi5oZXJvIC5idG4ge1xuYmFja2dyb3VuZC1jb2xvcjogIzE3YWFmZjtcbiAgICBvcGFjaXR5OjAuODsgLyogQ291bGV1ciBkZSBmb25kIGR1IGJvdXRvbiAqL1xuICAgIGNvbG9yOiB3aGl0ZTsgLyogQ291bGV1ciBkdSB0ZXh0ZSBkdSBib3V0b24gKi9cbiAgICBib3JkZXI6IG5vbmU7XG4gICAgYm9yZGVyLXJhZGl1czogNTBweDsgLyogQXJyb25kaXQgbGVzIGNvaW5zIGR1IGJvdXRvbiAqL1xuICAgIHBhZGRpbmc6IDE1cHggMzBweDsgLyogQWp1c3RlIGwnZXNwYWNlbWVudCBpbnRlcm5lIGR1IGJvdXRvbiAqL1xuICAgIHRleHQtdHJhbnNmb3JtOiB1cHBlcmNhc2U7IC8qIFRyYW5zZm9ybWUgbGUgdGV4dGUgZW4gbWFqdXNjdWxlcyAqL1xuICAgIGZvbnQtd2VpZ2h0OiBib2xkOyAvKiBSZW5kIGxlIHRleHRlIGVuIGdyYXMgKi9cbiAgICB0cmFuc2l0aW9uOiBhbGwgMC4zcyBlYXNlOyAvKiBBam91dGUgdW5lIHRyYW5zaXRpb24gZG91Y2Ugw6AgdG91cyBsZXMgY2hhbmdlbWVudHMgZGUgc3R5bGUgKi9cbiAgICBib3gtc2hhZG93OiAwcHggMTBweCAyMHB4IHJnYmEoMCwgMCwgMCwgMC4xKTsgLyogQWpvdXRlIHVuZSBvbWJyZSBzdWJ0aWxlICovXG59XG5cbi5oZXJvIC5idG46aG92ZXIge1xuICAgIGJhY2tncm91bmQtY29sb3I6ICNmZmEwN2E7IC8qIENoYW5nZSBsYSBjb3VsZXVyIGRlIGZvbmQgbG9yc3F1ZSBsYSBzb3VyaXMgc3Vydm9sZSBsZSBib3V0b24gKi9cbiAgICBib3gtc2hhZG93OiAwcHggMTVweCAyMHB4IHJnYmEoMCwgMCwgMCwgMC4zKTsgLyogQXVnbWVudGUgbCdvbWJyZSBsb3JzcXVlIGxhIHNvdXJpcyBzdXJ2b2xlIGxlIGJvdXRvbiAqL1xufVxuXG4vKiBuYXZiYXIgKi9cbi5uYXZiYXIge1xuICAgIGJhY2tncm91bmQtY29sb3I6IHJnYmEoNjgsIDEwOSwgMTkyLCAwLjcpO1xuICAgICAvKiBDb3VsZXVyIGRlIGZvbmQgc2VtaS10cmFuc3BhcmVudGUgKi9cbn1cblxuLm5hdmJhci1icmFuZCB7XG4gICAgY29sb3I6IHdoaXRlOyAvKiBDb3VsZXVyIGR1IHRleHRlIGRlIGxhIG1hcnF1ZSAqL1xufVxuXG4ubmF2YmFyLXRvZ2dsZXIge1xuICAgIGJvcmRlci1jb2xvcjogd2hpdGU7IC8qIENvdWxldXIgZGUgbGEgYm9yZHVyZSBkdSBib3V0b24gZGUgYmFzY3VsZW1lbnQgKi9cbn1cblxuLm5hdmJhci10b2dnbGVyLWljb24ge1xuICAgIGJhY2tncm91bmQtaW1hZ2U6IHVybChcImRhdGE6aW1hZ2Uvc3ZnK3htbCwlM0NzdmcgeG1sbnM9J2h0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnJyB3aWR0aD0nMzAnIGhlaWdodD0nMzAnIHZpZXdCb3g9JzAgMCAzMCAzMCclM0UlM0NwYXRoIHN0cm9rZT0ncmdiYSgyNTUsIDI1NSwgMjU1KScgc3Ryb2tlLWxpbmVjYXA9J3JvdW5kJyBzdHJva2UtbWl0ZXJsaW1pdD0nMTAnIHN0cm9rZS13aWR0aD0nMicgZD0nTTQgN2gyMk00IDE1aDIyTTQgMjNoMjInLyUzRSUzQy9zdmclM0VcIik7IC8qIENvdWxldXIgZGUgbCdpY8O0bmUgZHUgYm91dG9uIGRlIGJhc2N1bGVtZW50ICovXG59XG5cbi5uYXZiYXItbmF2IC5uYXYtbGluayB7XG4gICAgY29sb3I6IHdoaXRlOyAvKiBDb3VsZXVyIGR1IHRleHRlIGRlcyBsaWVucyBkZSBuYXZpZ2F0aW9uICovXG59XG5cbi5uYXZiYXItbmF2IC5uYXYtbGluazpob3ZlciB7XG4gICAgY29sb3I6ICNmZjYzNDc7IC8qIENvdWxldXIgZHUgdGV4dGUgZGVzIGxpZW5zIGRlIG5hdmlnYXRpb24gbG9yc3F1J2lscyBzb250IHN1cnZvbMOpcyAqL1xufVxuIl0sIm5hbWVzIjpbXSwic291cmNlUm9vdCI6IiJ9*/
