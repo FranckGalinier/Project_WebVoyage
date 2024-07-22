@@ -3,5 +3,17 @@
 {% block title %}Home{% endblock %}
 
 {% block body %}
-    <h1>Welcome to the Home page</h1>
+{{ include ('home/_parts/_navbar.html.twig') }}
+
+     <div class="hero animate__animated animate__fadeIn">
+        <h1 class="animate__animated animate__bounceInDown">Découvrez le Monde</h1>
+        <p class="animate__animated animate__fadeInUp">Apprenez tout sur vos destinations de voyage préférées</p>
+        <a href="{{ path ('continents') }}" class="btn btn-primary btn-lg animate__animated animate__zoomIn">Découvrez-le</a>
+    </div>
+
+<div class="section_solo">
+<h1>Apprenez en jouant</h1>
+<p>Quizz sur les destinations, par pays, ou dans le monde entier</p>
+<a href="{{path ('md_joueur')}}" class="btn btn-primary btn-lg">Jouer maintenant</a>
+</div>
 {% endblock %}

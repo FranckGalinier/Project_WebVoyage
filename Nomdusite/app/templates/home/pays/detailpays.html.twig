@@ -1,0 +1,96 @@
+{% extends 'base.html.twig' %}
+
+{% block title %} {{ps.label}}{% endblock %}
+
+{% block body %}
+{{ include ('home/_parts/_navbar.html.twig') }}
+<div class="container mt-4">
+    <h1 class="mb-4"> {{ ps.label}} </h1>
+    <p> {{ ps.description }}. </p>
+
+    <div class="row">
+        <div class="col-md-8">
+            <div class="card mb-4">
+                <div class="card-body">
+                    <h2 class="card-title">Informations générales</h2>
+                    <ul class="list-unstyled">
+                        <li><strong>Langues:</strong>   {{ ps.langue }} </li>
+                        <li><strong>Monnaie:</strong>  {{ ps.monnaie }} </li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="card mb-4">
+                <div class="card-body">
+                    <h2 class="card-title">Meilleures saisons pour voyager</h2>
+                    <p> De {{ ps.debutsaison}} à {{ps.finsaison}} </p>
+                    <h3>Événements importants</h3>
+                    <ul>
+                        {# {% for event in country.events %} #}
+                            <li> event.name  -  event.date </li>
+                        {# {% endfor %} #}
+                    </ul>
+                </div>
+            </div>
+
+            <div class="card mb-4">
+                <div class="card-body">
+                    <h2 class="card-title">Visites incontournables</h2>
+                    <ul>
+                        {# {% for site in country.tourismSites %} #}
+                            <li> site.name  -  site.description </li>
+                        {# {% endfor %} #}
+                    </ul>
+                </div>
+            </div>
+
+            <div class="card mb-4">
+                <div class="card-body">
+                    <h2 class="card-title">Formalités</h2>
+                    <ul>
+                        <li><strong>Visa:</strong>  {{ps.visa}} </li>
+                        <li><strong>Vaccinations:</strong> A VOIR </li>
+                        <li><strong>Passeport:</strong> 
+                        {% if ps.passport =="Oui" %}
+                        Oui
+                        {% else %}
+                        Non
+                        {% endif %}
+                         </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-4">
+            <div class="card mb-4">
+                <img src="#" class="card-img-top" alt="Drapeau de  country.name ">
+                <div class="card-body">
+                    <h2 class="card-title">Carte</h2>
+                    <div id="map" style="height: 300px;"></div>
+                </div>
+            </div>
+
+            <div class="card mb-4">
+                <div class="card-body">
+                    <h2 class="card-title">Conseils pratiques</h2>
+                    <ul>
+                        <li><strong>Transport:</strong>  country.transportTips </li>
+                        <li><strong>Hébergement:</strong>  country.accommodationTips </li>
+                        <li><strong>Gastronomie:</strong>  country.foodTips </li>
+                        <li><strong>Étiquette:</strong>  country.etiquetteTips </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block javascripts %}
+    {{ parent() }}
+    <script>
+        // Ici, vous pouvez ajouter du JavaScript pour initialiser une carte
+        // par exemple avec Leaflet ou Google Maps
+    </script>
+{% endblock %}

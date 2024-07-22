@@ -1,0 +1,41 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Tout les continents{% endblock %}
+
+{% block body %}
+{{ include ('home/_parts/_navbar.html.twig') }}
+
+<body>
+{# liste des pays #}
+<div class="container mt-5">
+    <h2 class="text-center">Toutes les destinations</h2>  
+    <div class="row">
+        <div class="col-md-4">
+        {% for ps in ps %}
+            <div class="card">
+                <img src="https://via.placeholder.com/300" class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title text-center">{{ ps.label }}</h5>
+                    <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quisquam, voluptate.</p>
+                    <a href="{{ path ('detailpays', {'id': ps.id}) }}" class="btn btn-primary">Voir plus</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endfor %}
+
+
+
+
+
+<script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+<script src="https://unpkg.com/leaflet-geoman-free/dist/leaflet-geoman.min.js"></script>
+<script src="https://unpkg.com/leaflet-geoman-free/dist/leaflet-geoman.min.css"></script>
+<script>
+// Créer une carte centrée sur les coordonnées [0, 0] (l'équateur)
+</script>
+
+
+
+{% endblock %}
