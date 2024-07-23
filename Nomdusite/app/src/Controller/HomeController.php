@@ -30,7 +30,6 @@ class HomeController extends AbstractController
     {
 
         $ps = $this->entityManager->getRepository(Destination::class)->findAll();
-        dump($ps);
 
         return $this->render('home/continents.html.twig',
         [

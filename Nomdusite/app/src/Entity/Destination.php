@@ -4,8 +4,14 @@ namespace App\Entity;
 
 use App\Repository\DestinationRepository;
 use Doctrine\ORM\Mapping as ORM;
+use ApiPlatform\Metadata\ApiResource;
+use Symfony\Component\Serializer\Annotation\Groups;
 
 #[ORM\Entity(repositoryClass: DestinationRepository::class)]
+#[ApiResource(
+    normalizationContext: ['groups' => ['dest:read']],
+    denormalizationContext: ['groups' => ['dest:write']]
+)]
 class Destination
 {
     #[ORM\Id]
@@ -14,9 +20,11 @@ class Destination
     private ?int $id = null;
 
     #[ORM\Column(length: 255)]
+    #[Groups(['dest:read', 'dest:write'])]
     private ?string $label = null;
 
     #[ORM\Column(length: 255)]
+    #[Groups(['dest:read'])]
     private ?string $image_path = null;
 
     #[ORM\Column(length: 255)]

@@ -17,7 +17,7 @@ class AppFixtures extends Fixture
         $dest = new Destination();
         $dest->setLabel('île Açores');
         $dest->setDescription('Les Açores sont un archipel de 9 îles volcaniques portugaises situées dans l’océan Atlantique');
-        $dest->setImagePath('acores.jpg');
+        $dest->setImagePath('acores.jpeg');
         $dest->setDrapeau('portugal.png');
         $dest->setPassport('Oui');
         $dest->setVisa('Non');
