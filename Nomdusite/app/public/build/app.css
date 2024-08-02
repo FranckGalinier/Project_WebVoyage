@@ -4,74 +4,93 @@
 /* style de la div hero */
 
 .hero {
-  padding: 1rem;
+    padding: 1rem;
 
-  border-radius: 5px;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-  background-image: url(/build/images/bg-images.e2c590ad.jpg);
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    background-image: url(./images/bg-images.e2c590ad.jpg);
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    height: 100vh; /* Ajustez cette valeur en fonction de vos besoins */
+    height: 100vh;
+    /* Ajustez cette valeur en fonction de vos besoins */
     background-size: cover;
     background-position: center;
-    color: white; /* Changez la couleur du texte en fonction de votre image de fond */
+    color: white;
+    /* Changez la couleur du texte en fonction de votre image de fond */
 }
 
 .hero h1 {
     font-size: 2.5em;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Ajoute un peu d'ombre au texte pour le rendre plus lisible */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    /* Ajoute un peu d'ombre au texte pour le rendre plus lisible */
 }
 
 .hero p {
     font-size: 1.2em;
-    max-width: 600px; /* Limite la largeur du texte */
+    max-width: 600px;
+    /* Limite la largeur du texte */
     text-align: center;
 }
 
 .hero .btn {
-background-color: #17aaff;
-    opacity:0.8; /* Couleur de fond du bouton */
-    color: white; /* Couleur du texte du bouton */
+    background-color: #17aaff;
+    opacity: 0.8;
+    /* Couleur de fond du bouton */
+    color: white;
+    /* Couleur du texte du bouton */
     border: none;
-    border-radius: 50px; /* Arrondit les coins du bouton */
-    padding: 15px 30px; /* Ajuste l'espacement interne du bouton */
-    text-transform: uppercase; /* Transforme le texte en majuscules */
-    font-weight: bold; /* Rend le texte en gras */
-    transition: all 0.3s ease; /* Ajoute une transition douce à tous les changements de style */
-    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.1); /* Ajoute une ombre subtile */
+    border-radius: 50px;
+    /* Arrondit les coins du bouton */
+    padding: 15px 30px;
+    /* Ajuste l'espacement interne du bouton */
+    text-transform: uppercase;
+    /* Transforme le texte en majuscules */
+    font-weight: bold;
+    /* Rend le texte en gras */
+    transition: all 0.3s ease;
+    /* Ajoute une transition douce à tous les changements de style */
+    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.1);
+    /* Ajoute une ombre subtile */
 }
 
 .hero .btn:hover {
-    background-color: #ffa07a; /* Change la couleur de fond lorsque la souris survole le bouton */
-    box-shadow: 0px 15px 20px rgba(0, 0, 0, 0.3); /* Augmente l'ombre lorsque la souris survole le bouton */
+    background-color: #ffa07a;
+    /* Change la couleur de fond lorsque la souris survole le bouton */
+    box-shadow: 0px 15px 20px rgba(0, 0, 0, 0.3);
+    /* Augmente l'ombre lorsque la souris survole le bouton */
 }
 
 /* navbar */
 .navbar {
     background-color: rgba(68, 109, 192, 0.7);
-     /* Couleur de fond semi-transparente */
+    /* Couleur de fond semi-transparente */
 }
 
 .navbar-brand {
-    color: white; /* Couleur du texte de la marque */
+    color: white;
+    /* Couleur du texte de la marque */
 }
 
 .navbar-toggler {
-    border-color: white; /* Couleur de la bordure du bouton de basculement */
+    border-color: white;
+    /* Couleur de la bordure du bouton de basculement */
 }
 
 .navbar-toggler-icon {
-    background-image: url("data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 width=%2730%27 height=%2730%27 viewBox=%270 0 30 30%27%3E%3Cpath stroke=%27rgba%28255, 255, 255%29%27 stroke-linecap=%27round%27 stroke-miterlimit=%2710%27 stroke-width=%272%27 d=%27M4 7h22M4 15h22M4 23h22%27/%3E%3C/svg%3E"); /* Couleur de l'icône du bouton de basculement */
+    background-image: url("data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 width=%2730%27 height=%2730%27 viewBox=%270 0 30 30%27%3E%3Cpath stroke=%27rgba%28255, 255, 255%29%27 stroke-linecap=%27round%27 stroke-miterlimit=%2710%27 stroke-width=%272%27 d=%27M4 7h22M4 15h22M4 23h22%27/%3E%3C/svg%3E");
+    /* Couleur de l'icône du bouton de basculement */
 }
 
 .navbar-nav .nav-link {
-    color: white; /* Couleur du texte des liens de navigation */
+    color: white;
+    /* Couleur du texte des liens de navigation */
 }
 
 .navbar-nav .nav-link:hover {
-    color: #ff6347; /* Couleur du texte des liens de navigation lorsqu'ils sont survolés */
+    color: #ff6347;
+    /* Couleur du texte des liens de navigation lorsqu'ils sont survolés */
 }
 
 

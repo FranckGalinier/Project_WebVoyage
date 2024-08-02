@@ -1,0 +1,35 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Home{% endblock %}
+
+{% block body %}
+
+{{ include ('home/_parts/_navbar.html.twig') }}
+
+<div id="map"style="height: 500px;">
+</div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jvectormap/2.0.5/jquery-jvectormap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jvectormap/2.0.5/jquery-jvectormap-world-mill-en.js"></script>
+    <script>
+       var map = L.map('map').setView([0, 0], 2);
+
+L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+    attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+}).addTo(map);
+fetch('https://raw.githubusercontent.com/johan/world.geo.json/master/countries.geo.json')
+    .then(response => response.json())
+    .then(data => {
+        L.geoJSON(data, {
+            onEachFeature: function(feature, layer) {
+                layer.on('click', function() {
+                    window.location.href = '/pays/' + feature.properties.iso_a2;
+                });
+            }
+        }).addTo(map);
+    });
+
+    </script>
+
+</script>
+{% endblock %}

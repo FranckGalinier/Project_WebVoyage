@@ -31,7 +31,7 @@ class HomeController extends AbstractController
 
         $ps = $this->entityManager->getRepository(Destination::class)->findAll();
 
-        return $this->render('home/continents.html.twig',
+        return $this->render('home/map.html.twig',
         [
             'ps' => $ps
         ]);
